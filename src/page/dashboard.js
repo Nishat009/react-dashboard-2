@@ -1,9 +1,10 @@
 import React from "react";
 import Navbar from '../layouts/navbar'
 import Sidebar from '../layouts/sidebar';
-// import Dashboard from '../Components/dashboardDetails';
+// import ChartBar from '../Components/dashboardDetails';
 import {cardData} from '../data/currencyData';
 import CurrencyCard from '../Components/CurrencyCard'
+import ChartBar from '../Components/ChartBars';
 function dashboard() {
     return ( 
         <div>
@@ -26,7 +27,7 @@ function dashboard() {
                   </div>
                   <div className="xl:flex mt-[27px] gap-[25px]">
                     <div className="flex-auto bg-[#dfdfdf] dark:bg-[#373741] rounded-[15px]"> 
-                      {/* <ChartBar /> */}
+                      <ChartBar/>
                     </div>
                     <div className="bg-[#dfdfdf] dark:bg-[#393944] rounded-[15px] py-5 pl-[39px] pr-[20px] xl:w-[478px] relative mt-[25px] xl:mt-0">
                       <p className='absolute left-[39px] top-[37px] text-[#2c2c2c] text-[20px] font-semibold leading-[28px] dark:text-white'>Markets</p>
