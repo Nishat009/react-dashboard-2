@@ -1,6 +1,8 @@
-import {useEffect} from 'react'
-import { Chart } from 'chart.js';
+import {useEffect, useRef} from 'react'
+import { Chart } from 'chart.js/auto';
+
 export default function ChartBars() {
+    const chartRef = useRef(null);
     useEffect(() => {
         let config = {
             type: 'bar',
@@ -92,14 +94,72 @@ export default function ChartBars() {
                 },
             },
         };
-        let ctx = document.getElementById('bar-chart').getContext('2d');
-        window.myBar = new Chart(ctx, config);
-    }, []);
+        const ctx = document.getElementById('bar-chart').getContext('2d');
+    
+        // Check if there's an existing chart instance, destroy it before creating a new one
+        if (chartRef.current !== null) {
+          chartRef.current.destroy();
+        }
+    
+        // Create a new chart instance
+        chartRef.current = new Chart(ctx, config);
+    
+        // Clean up function to destroy the chart when the component unmounts
+        return () => {
+          if (chartRef.current !== null) {
+            chartRef.current.destroy();
+          }
+        };
+      }, []);
+    
+   
   return (
-    <div>
-    <div className="relative mt-5">
-        <canvas id="bar-chart"></canvas>
-    </div>
-</div>
+    <div className='py-[35px] px-[43px]'>
+            <div className='flex flex-col min-[1601px]:flex-row justify-between items-center'>
+                <div className='flex justify-between items-center w-full sm:w-[334px] bg-[#626d7d0c] p-5 rounded-[12px]'>
+                    <div>
+                        <p className="uppercase text-black dark:text-white text-[20px] font-semibold leading-[28px]">
+                            BTCUSDT
+                        </p>
+                        <p className="text-[#626D7D] text-[20px] font-semibold leading-[28px]">Bitcoin</p>
+                    </div>
+                    <div className='flex justify-between items-center gap-[15px]'>
+                        <div>
+                            <p className="uppercase text-black dark:text-white text-[13px] font-medium leading-[22px]">
+                                $23,738
+                            </p>
+                            <span className="rounded-[60px] px-2 text-[11px] leading-[22px] font-semibold word-break text-[#219653] bg-[#2196543c]">+14.67%</span>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+                <div className='flex gap-[7px] mt-3 3xl:mt-0'>
+                    <span className='text-[#0060FF] dark:bg-[#131313] bg-[#b2daf8bb] text-[10px] font-semibold leading-[22px] px-3 py-1 rounded'>
+                        1H
+                    </span>
+                    <span className='text-black dark:text-white bg-[#f8f8f8] dark:bg-[#13131367] text-[10px] font-semibold leading-[22px] px-3 py-1 rounded'>
+                        3H
+                    </span>
+                    <span className='text-black dark:text-white bg-[#f8f8f8] dark:bg-[#13131367] text-[10px] font-semibold leading-[22px] px-3 py-1 rounded'>
+                        5H
+                    </span>
+                    <span className='text-black dark:text-white bg-[#f8f8f8] dark:bg-[#13131367] text-[10px] font-semibold leading-[22px] px-3 py-1 rounded'>
+                        1D
+                    </span>
+                    <span className='text-black dark:text-white bg-[#f8f8f8] dark:bg-[#13131367] text-[10px] font-semibold leading-[22px] px-3 py-1 rounded'>
+                        1W
+                    </span>
+                    <span className='text-black dark:text-white bg-[#f8f8f8] dark:bg-[#13131367] text-[10px] font-semibold leading-[22px] px-3 py-1 rounded'>
+                        1M
+                    </span>
+                </div>
+            </div>
+            <div>
+                <div className="relative mt-5">
+                    <canvas id="bar-chart"></canvas>
+                </div>
+            </div>
+        </div>
   )
 }

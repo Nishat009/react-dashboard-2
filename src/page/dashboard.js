@@ -26,7 +26,7 @@ function dashboard() {
                       
                   </div>
                   <div className="xl:flex mt-[27px] gap-[25px]">
-                    <div className="flex-auto bg-[#dfdfdf] dark:bg-[#373741] rounded-[15px]"> 
+                    <div className="flex-auto bg-[#f8f6f6] dark:bg-[#373741] rounded-[15px]"> 
                       <ChartBar/>
                     </div>
                     <div className="bg-[#dfdfdf] dark:bg-[#393944] rounded-[15px] py-5 pl-[39px] pr-[20px] xl:w-[478px] relative mt-[25px] xl:mt-0">
