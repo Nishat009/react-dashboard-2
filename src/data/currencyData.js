@@ -14,7 +14,7 @@ export const cardData = [
       description: "Bitcoin",
       price: "$23,738",
       pnlDaily: {
-        value: "-$2560.78",
+        value: "-$2565.78",
         percentage: "+14.67%",
       },
     },
