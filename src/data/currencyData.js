@@ -24,7 +24,7 @@ export const cardData = [
       vector: VectorIcon,
       name: "ETHUSDT",
       description: "Ethereum",
-      price: "$1,950",
+      price: "$1650",
       pnlDaily: {
         value: "+$350.45",
         percentage: "-18.0%",
