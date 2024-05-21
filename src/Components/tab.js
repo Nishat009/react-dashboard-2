@@ -3,6 +3,25 @@ import { Tab } from '@headlessui/react'
 import Table from '../Components/table'
 const categories = [
   {
+    name: 'Recent',
+    posts: [
+      {
+        id: 1,
+        title: 'Does drinking coffee make you smarter?',
+        date: '5h ago',
+        commentCount: 5,
+        shareCount: 2,
+      },
+      {
+        id: 2,
+        title: "So you've bought coffee... now what?",
+        date: '2h ago',
+        commentCount: 3,
+        shareCount: 2,
+      },
+    ],
+  },
+  {
     name: 'Popular',
     posts: [
       {
@@ -41,7 +60,6 @@ const categories = [
     ],
   },
 ]
-
 function tab() {
   return (
     <div className="flex w-full justify-center pt-4">

@@ -1,75 +1,70 @@
-import React from 'react'
+import React from 'react';
 
-function table() {
+export const currentRateDate = [
+  {
+    currency: 'BTCUSDT',
+    digital_currency: 'Bitcoin',
+    amount: '$23,495',
+    commission: '+23.4%',
+  },
+  {
+    currency: 'AXSUSDT',
+    digital_currency: 'Axie Infinity',
+    amount: '$15.9',
+    commission: '-7.8%',
+  },
+  {
+    currency: 'ETHUSDT',
+    digital_currency: 'Ethereum',
+    amount: '$15,978',
+    commission: '-0.3%',
+  },
+  {
+    currency: 'SOLUSDT',
+    digital_currency: 'Solana',
+    amount: '$495',
+    commission: '+11.1%',
+  }
+];
+
+function Table() {
   return (
-   
-
-<div class="relative overflow-x-auto">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-                <th scope="col" class="px-6 py-3">
-                    Product name
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Color
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Category
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Price
-                </th>
-            </tr>
+    <div className="relative overflow-x-auto">
+      <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+            <th scope="col" className="px-6 py-3">
+              Currency
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Digital Currency
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Amount
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Commission
+            </th>
+          </tr>
         </thead>
         <tbody>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Apple MacBook Pro 17"
-                </th>
-                <td class="px-6 py-4">
-                    Silver
-                </td>
-                <td class="px-6 py-4">
-                    Laptop
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
+          {currentRateDate.map((data, index) => (
+            <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                {data.currency}
+              </th>
+              <td className="px-6 py-4">{data.digital_currency}</td>
+              <td className="px-6 py-4">{data.amount}</td>
+              <td className="px-6 py-4">{data.commission}</td>
             </tr>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Microsoft Surface Pro
-                </th>
-                <td class="px-6 py-4">
-                    White
-                </td>
-                <td class="px-6 py-4">
-                    Laptop PC
-                </td>
-                <td class="px-6 py-4">
-                    $1999
-                </td>
-            </tr>
-            <tr class="bg-white dark:bg-gray-800">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Magic Mouse 2
-                </th>
-                <td class="px-6 py-4">
-                    Black
-                </td>
-                <td class="px-6 py-4">
-                    Accessories
-                </td>
-                <td class="px-6 py-4">
-                    $99
-                </td>
-            </tr>
+          ))}
         </tbody>
-    </table>
-</div>
-
-  )
+      </table>
+    </div>
+  );
 }
 
-export default table
+export default Table;

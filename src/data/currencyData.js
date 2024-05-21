@@ -5,6 +5,7 @@ import VectorIcon from '../images/Vector.png'
 import SOL from '../images/IconSOL.png'
 import VectorIcon3 from '../images/Vector3.png'
 import IconWalet from '../images/IconWallet.png'
+
 export const cardData = [
     {
       id: 1,
