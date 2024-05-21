@@ -29,7 +29,7 @@ function dashboard() {
                     <div className="flex-auto bg-[#f8f6f6] dark:bg-[#373741] rounded-[15px]"> 
                       <ChartBar/>
                     </div>
-                    <div className="bg-[#f8f6f6] dark:bg-[#373741] rounded-[15px] py-5 pl-[39px] pr-[20px] xl:w-[478px] relative mt-[25px] xl:mt-0">
+                    <div className="bg-[#f8f6f6] dark:bg-[#373741] rounded-[15px] p-5 xl:w-[478px] relative mt-[25px] xl:mt-0">
                       <p className=' text-[#2c2c2c] text-[20px] font-semibold leading-[28px] dark:text-white'>Markets</p>
                         <Tab/>
                     </div>
